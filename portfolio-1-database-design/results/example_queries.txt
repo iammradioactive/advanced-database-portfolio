@@ -1,0 +1,56 @@
+QUERY 1
+-- These are inspection queries for Portfolio 1, not the Portfolio 2 benchmark.
+-- 1. Customer and delivery details for five orders.
+SELECT o.order_id, c.first_name || ' ' || c.last_name AS customer_name,
+       a.city, w.warehouse_code, o.status, o.created_at
+FROM orders AS o
+JOIN customers AS c ON c.customer_id = o.customer_id
+JOIN customer_addresses AS a
+  ON a.customer_id = o.customer_id AND a.address_no = o.shipping_address_no
+JOIN warehouses AS w ON w.warehouse_id = o.warehouse_id
+ORDER BY o.order_id DESC
+LIMIT 5;;
+order_id | customer_name | city | warehouse_code | status | created_at
+120000 | Zainab Balogun | Ajah | LEKKI | PENDING | 2026-11-13T23:59:00Z
+119999 | Uche Ibrahim | Ikeja | IKEJA | PAID | 2026-11-13T23:55:11Z
+119998 | Seyi Sule | Yaba | IKEJA | PENDING | 2026-11-13T23:51:23Z
+119997 | Damilola Obi | Ajah | LEKKI | DISPATCHED | 2026-11-13T23:47:35Z
+119996 | Yusuf Sule | Ajah | LEKKI | PAID | 2026-11-13T23:43:47Z
+Rows returned: 5
+
+QUERY 2
+-- 2. The same product has separately tracked stock at the two warehouses.
+SELECT w.warehouse_code, p.sku, p.product_name,
+       s.on_hand, s.reserved, s.available
+FROM v_stock_availability AS s
+JOIN products AS p ON p.product_id = s.product_id
+JOIN warehouses AS w ON w.warehouse_id = s.warehouse_id
+WHERE s.product_id = 1
+ORDER BY w.warehouse_id;;
+warehouse_code | sku | product_name | on_hand | reserved | available
+IKEJA | LM-01-0001 | Lagoon Select Parboiled rice (5 kg; 1 unit pack) | 250 | 4 | 246
+LEKKI | LM-01-0001 | Lagoon Select Parboiled rice (5 kg; 1 unit pack) | 81 | 1 | 80
+Rows returned: 2
+
+QUERY 3
+-- 3. Stored historical prices and derived totals for order 1; all amounts in kobo.
+SELECT i.order_id, i.line_no, p.sku, i.quantity, i.unit_price_kobo,
+       i.quantity * i.unit_price_kobo AS line_total_kobo
+FROM order_items AS i
+JOIN products AS p ON p.product_id = i.product_id
+WHERE i.order_id = 1
+ORDER BY i.line_no;;
+order_id | line_no | sku | quantity | unit_price_kobo | line_total_kobo
+1 | 1 | LM-04-0374 | 1 | 965200 | 965200
+1 | 2 | LM-05-0490 | 1 | 735000 | 735000
+1 | 3 | LM-05-0408 | 1 | 778900 | 778900
+Rows returned: 3
+
+QUERY 4
+SELECT order_id, item_total_kobo, delivery_fee_kobo, payable_kobo
+FROM v_order_totals
+WHERE order_id = 1;;
+order_id | item_total_kobo | delivery_fee_kobo | payable_kobo
+1 | 2479100 | 150000 | 2629100
+Rows returned: 1
+

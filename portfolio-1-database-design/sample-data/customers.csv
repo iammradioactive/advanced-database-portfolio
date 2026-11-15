@@ -1,0 +1,16 @@
+customer_id,first_name,last_name,email
+1,Yusuf,Sule,customer00001@example.invalid
+2,Yusuf,Eze,customer00002@example.invalid
+3,Bola,Adeyemi,customer00003@example.invalid
+4,Uche,Ojo,customer00004@example.invalid
+5,Kemi,Ibrahim,customer00005@example.invalid
+6,Ibrahim,Okeke,customer00006@example.invalid
+7,Zainab,Ibrahim,customer00007@example.invalid
+8,Ada,Musa,customer00008@example.invalid
+9,Damilola,Ogunleye,customer00009@example.invalid
+10,Damilola,Yusuf,customer00010@example.invalid
+11,Damilola,Balogun,customer00011@example.invalid
+12,Uche,Nwosu,customer00012@example.invalid
+13,Tola,Nwosu,customer00013@example.invalid
+14,Musa,Balogun,customer00014@example.invalid
+15,Damilola,Balogun,customer00015@example.invalid

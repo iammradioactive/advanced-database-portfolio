@@ -1,0 +1,139 @@
+{
+  "executed_at_utc": "2026-11-15T21:32:48.221+00:00",
+  "constraint_tests": [
+    {
+      "test": "duplicate customer email",
+      "passed": true,
+      "error": "UNIQUE constraint failed: customers.email",
+      "code": "SQLITE_CONSTRAINT_UNIQUE"
+    },
+    {
+      "test": "missing category foreign key",
+      "passed": true,
+      "error": "FOREIGN KEY constraint failed",
+      "code": "SQLITE_CONSTRAINT_FOREIGNKEY"
+    },
+    {
+      "test": "zero product price",
+      "passed": true,
+      "error": "CHECK constraint failed: unit_price_kobo>0",
+      "code": "SQLITE_CONSTRAINT_CHECK"
+    },
+    {
+      "test": "strict integer quantity",
+      "passed": true,
+      "error": "cannot store TEXT value in INTEGER column inventory.reserved",
+      "code": "unknown"
+    },
+    {
+      "test": "negative stock",
+      "passed": true,
+      "error": "CHECK constraint failed: on_hand>=0",
+      "code": "SQLITE_CONSTRAINT_CHECK"
+    },
+    {
+      "test": "reserved exceeds stock",
+      "passed": true,
+      "error": "CHECK constraint failed: reserved>=0 AND reserved<=on_hand",
+      "code": "SQLITE_CONSTRAINT_CHECK"
+    },
+    {
+      "test": "address number not registered to this customer",
+      "passed": true,
+      "error": "FOREIGN KEY constraint failed",
+      "code": "SQLITE_CONSTRAINT_FOREIGNKEY"
+    },
+    {
+      "test": "unknown order state",
+      "passed": true,
+      "error": "CHECK constraint failed: status IN ('PENDING','RESERVED','PAID','DISPATCHED','DELIVERED','CANCELLED')",
+      "code": "SQLITE_CONSTRAINT_CHECK"
+    },
+    {
+      "test": "noncanonical timestamp",
+      "passed": true,
+      "error": "CHECK constraint failed: strftime('%Y-%m-%dT%H:%M:%SZ',created_at) IS NOT NULL\n                                AND strftime('%Y-%m-%dT%H:%M:%SZ',created_at)=created_at",
+      "code": "SQLITE_CONSTRAINT_CHECK"
+    },
+    {
+      "test": "zero order-line quantity",
+      "passed": true,
+      "error": "CHECK constraint failed: quantity>0",
+      "code": "SQLITE_CONSTRAINT_CHECK"
+    },
+    {
+      "test": "duplicate product per order",
+      "passed": true,
+      "error": "UNIQUE constraint failed: order_items.order_id, order_items.product_id",
+      "code": "SQLITE_CONSTRAINT_UNIQUE"
+    },
+    {
+      "test": "wrong successful payment amount",
+      "passed": true,
+      "error": "successful payment must equal order payable amount",
+      "code": "SQLITE_CONSTRAINT_TRIGGER"
+    },
+    {
+      "test": "second successful charge",
+      "passed": true,
+      "error": "UNIQUE constraint failed: payment_attempts.order_id",
+      "code": "SQLITE_CONSTRAINT_UNIQUE"
+    },
+    {
+      "test": "paid line modification",
+      "passed": true,
+      "error": "paid order lines are immutable",
+      "code": "SQLITE_CONSTRAINT_TRIGGER"
+    },
+    {
+      "test": "paid delivery fee modification",
+      "passed": true,
+      "error": "paid delivery fee is immutable",
+      "code": "SQLITE_CONSTRAINT_TRIGGER"
+    },
+    {
+      "test": "invalid outbox JSON",
+      "passed": true,
+      "error": "CHECK constraint failed: json_valid(payload_json)",
+      "code": "SQLITE_CONSTRAINT_CHECK"
+    },
+    {
+      "test": "delivery before dispatch",
+      "passed": true,
+      "error": "CHECK constraint failed: delivered_at IS NULL OR delivered_at>=shipped_at",
+      "code": "SQLITE_CONSTRAINT_CHECK"
+    },
+    {
+      "test": "mutation of historical address",
+      "passed": true,
+      "error": "used delivery address is immutable; create a new address",
+      "code": "SQLITE_CONSTRAINT_TRIGGER"
+    },
+    {
+      "test": "moving an unpaid line into a paid order",
+      "passed": true,
+      "error": "paid order lines are immutable",
+      "code": "SQLITE_CONSTRAINT_TRIGGER"
+    },
+    {
+      "test": "rewriting successful payment history",
+      "passed": true,
+      "error": "successful payment history is immutable",
+      "code": "SQLITE_CONSTRAINT_TRIGGER"
+    },
+    {
+      "test": "deleting successful payment history",
+      "passed": true,
+      "error": "successful payment history is immutable",
+      "code": "SQLITE_CONSTRAINT_TRIGGER"
+    }
+  ],
+  "cross_table_checks": {
+    "integrity_check": "ok",
+    "foreign_key_errors": [],
+    "mismatched_successful_payments": 0,
+    "reserved_inventory_mismatches": 0,
+    "shipped_orders_without_shipment": 0
+  },
+  "all_passed": true
+}

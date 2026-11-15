@@ -1,0 +1,6 @@
+order_id,customer_name,city,warehouse_code,status,created_at
+120000,Zainab Balogun,Ajah,LEKKI,PENDING,2026-11-13T23:59:00Z
+119999,Uche Ibrahim,Ikeja,IKEJA,PAID,2026-11-13T23:55:11Z
+119998,Seyi Sule,Yaba,IKEJA,PENDING,2026-11-13T23:51:23Z
+119997,Damilola Obi,Ajah,LEKKI,DISPATCHED,2026-11-13T23:47:35Z
+119996,Yusuf Sule,Ajah,LEKKI,PAID,2026-11-13T23:43:47Z

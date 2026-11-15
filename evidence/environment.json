@@ -1,0 +1,9 @@
+{
+  "captured_at_utc": "2026-11-15T21:32:46.544+00:00",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "sqlite": "3.46.1",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "cpu": "AMD EPYC 9V74 80-Core Processor",
+  "logical_cpus": 5,
+  "timing_scope": "local runtime; no production capacity claim"
+}
