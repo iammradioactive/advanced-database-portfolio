@@ -5,8 +5,7 @@ Lagoon Market, the same fictional online retailer used in Portfolio 1.
 
 ## Required evidence
 The assessment requires SQL queries, query results, execution plans,
-indexing/optimisation evidence and a brief performance analysis
-(MIVA Open University, 2026, p. 3).
+indexing/optimisation evidence and a brief performance analysis.
 
 ## Where to put the work
 Keep this activity's files inside this folder. The following names are
