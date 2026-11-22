@@ -6,7 +6,7 @@ Lagoon Market, using order checkout and warehouse stock allocation.
 ## Required evidence
 The assessment requires transaction examples showing commit, rollback,
 isolation, a concurrency issue or control mechanism, and screenshots or
-output evidence (MIVA Open University, 2026, p. 3).
+output evidence.
 
 ## Where to put the work
 Keep this activity's files inside this folder. Suggested organisation:
