@@ -63,4 +63,3 @@ A busy timeout helps transient contention but does not create more concurrent wr
 Transactions should remain short and retries should be bounded. High concurrent write
 volume would justify a client/server engine rather than adding fictitious row locks.
 
-References: SQLite (n.d.-c, n.d.-e); full entries appear in `docs/REFERENCES.md`.
