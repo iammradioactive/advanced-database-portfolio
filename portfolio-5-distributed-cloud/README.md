@@ -117,5 +117,3 @@ cloud deployment, including security, backups and the safeguards still required.
 assessment allows a distributed/cloud discussion or setup; the evidence here is the
 executed distributed-process setup, not an invented cloud console screenshot.
 
-References: SQLite (n.d.-a); Gilbert and Lynch (2002). Full APA entries are in
-`docs/REFERENCES.md`.
