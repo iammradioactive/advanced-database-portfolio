@@ -7,8 +7,7 @@ other four portfolio activities.
 ## Required evidence
 The assessment permits a distributed/cloud database discussion or setup
 based on the same case study, including replication, sharding,
-availability, consistency, or deployment evidence
-(MIVA Open University, 2026, p. 3).
+availability, consistency, or deployment evidence.
 
 A paid cloud service or a live cloud deployment is not explicitly required
 by that wording. Do not present a proposed architecture as a deployed one.
