@@ -2,9 +2,12 @@
 
 Result: **PASS**
 
-Execution context: local execution
-Started (UTC): 2026-11-15T21:32:39.872+00:00
-Finished (UTC): 2026-11-15T21:32:48.399+00:00
+Execution context: GitHub Actions
+Started (UTC): 2026-11-22T18:16:03.159+00:00
+Finished (UTC): 2026-11-22T18:16:09.239+00:00
+
+Run: https://github.com/iammradioactive/advanced-database-portfolio/actions/runs/45054065003
+Source commit: 3ea690c65fa5bc8e71bdff0751ebb89a96d1683e
 
 Constraint tests passed: **21/21**
 
