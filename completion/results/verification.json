@@ -1,0 +1,106 @@
+{
+  "verified_at_utc": "2026-11-22T18:53:49.233+00:00",
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "21 baseline constraints rechecked",
+      "passed": true
+    },
+    {
+      "check": "Timing sample count and median: q1_before",
+      "passed": true
+    },
+    {
+      "check": "Timing sample count and median: q2_before",
+      "passed": true
+    },
+    {
+      "check": "Timing sample count and median: q3_before",
+      "passed": true
+    },
+    {
+      "check": "Timing sample count and median: q2_rewrite_only",
+      "passed": true
+    },
+    {
+      "check": "Timing sample count and median: q2_index_only",
+      "passed": true
+    },
+    {
+      "check": "Timing sample count and median: q1_after",
+      "passed": true
+    },
+    {
+      "check": "Timing sample count and median: q2_after",
+      "passed": true
+    },
+    {
+      "check": "Timing sample count and median: q3_after",
+      "passed": true
+    },
+    {
+      "check": "Complete before/after CSV equality: q1",
+      "passed": true
+    },
+    {
+      "check": "Before/after result hash equality: q1",
+      "passed": true
+    },
+    {
+      "check": "Complete before/after CSV equality: q2",
+      "passed": true
+    },
+    {
+      "check": "Before/after result hash equality: q2",
+      "passed": true
+    },
+    {
+      "check": "Complete before/after CSV equality: q3",
+      "passed": true
+    },
+    {
+      "check": "Before/after result hash equality: q3",
+      "passed": true
+    },
+    {
+      "check": "Date query four-way ablation equality",
+      "passed": true
+    },
+    {
+      "check": "portfolio-3-transactions-concurrency complete test suite",
+      "passed": true
+    },
+    {
+      "check": "portfolio-4-nosql complete test suite",
+      "passed": true
+    },
+    {
+      "check": "portfolio-5-distributed-cloud complete test suite",
+      "passed": true
+    },
+    {
+      "check": "Canonical database integrity",
+      "passed": true
+    },
+    {
+      "check": "Canonical foreign-key consistency",
+      "passed": true
+    },
+    {
+      "check": "Canonical seeded row counts preserved",
+      "passed": true
+    },
+    {
+      "check": "600-document NoSQL export matches SQL-derived seed",
+      "passed": true
+    },
+    {
+      "check": "Four node files have correct integrity and shard placement",
+      "passed": true
+    },
+    {
+      "check": "Original Portfolio 1 files preserved byte-for-byte",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+5 | 0 | 0 | SEARCH o USING COVERING INDEX opt_paid_queue (created_at<?)
+10 | 0 | 0 | CORRELATED SCALAR SUBQUERY 1
+14 | 10 | 0 | SEARCH s USING COVERING INDEX sqlite_autoindex_shipments_1 (order_id=?)
+22 | 0 | 0 | SEARCH w USING INTEGER PRIMARY KEY (rowid=?)

@@ -1,0 +1,12 @@
+2 | 0 | 0 | CO-ROUTINE ranked
+5 | 2 | 0 | CO-ROUTINE (subquery-4)
+7 | 5 | 0 | CO-ROUTINE customer_spend
+14 | 7 | 0 | SCAN p
+18 | 7 | 0 | SEARCH o USING INTEGER PRIMARY KEY (rowid=?)
+21 | 7 | 0 | USE TEMP B-TREE FOR GROUP BY
+61 | 5 | 0 | SCAN customer_spend
+71 | 5 | 0 | USE TEMP B-TREE FOR ORDER BY
+87 | 2 | 0 | SCAN (subquery-4)
+155 | 0 | 0 | SCAN r
+160 | 0 | 0 | SEARCH c USING INTEGER PRIMARY KEY (rowid=?)
+172 | 0 | 0 | USE TEMP B-TREE FOR ORDER BY

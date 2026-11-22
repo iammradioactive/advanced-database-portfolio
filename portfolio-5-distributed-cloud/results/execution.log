@@ -1,0 +1,162 @@
+{"test": "D01 Four independent database server processes", "passed": true, "pids": {"s0-primary": 3874, "s0-replica": 3876, "s1-primary": 3878, "s1-replica": 3880}, "ports": {"s0-primary": 8810, "s0-replica": 8811, "s1-primary": 8820, "s1-replica": 8821}}
+{"test": "D02 Real horizontal partitioning of delivery records", "passed": true, "rule": "order_id % 2", "shard_counts": {"0": 65, "1": 55}, "total": 120}
+{"test": "D03 Asynchronous event-log replication", "passed": true, "watermarks": {"0": 65, "1": 55}, "pairwise_projection_hashes_equal": true}
+{"test": "D04 Idempotent application-event retry", "passed": true, "event_id": "source-119588-v1", "original_seq": 1, "replay_seq": 1}
+{"test": "D05 Routing and replica write protection", "passed": true, "wrong_shard_http": 409, "replica_write_http": 403}
+{"test": "D06 Controlled replication pause produces stale read", "passed": true, "order_id": 119588, "primary_version": 2, "replica_version": 1, "lag_events": 1, "fault": "replication worker paused; not an OS network partition"}
+{"test": "D07 Session watermark refuses a stale response", "passed": true, "required_seq": 66, "http_status": 503, "error": "node behind requested session watermark"}
+{"test": "D08 Promotion requires an explicit fencing step", "passed": true, "http_status": 412, "error": "old primary must be fenced first"}
+{"test": "D09 Resume replication and regain session consistency", "passed": true, "replica_version": 2, "last_applied": 66, "hashes_equal": true}
+{"test": "D10 Optimistic concurrency rejects stale client version", "passed": true, "http_status": 409, "error": "version conflict"}
+{"test": "D11 Replication replay is idempotent", "passed": true, "duplicates": 1, "new_events": 0}
+{"test": "D12 Read availability after actual primary process termination", "passed": true, "old_primary_exit_code": -15, "served_by": "s0-replica", "version": 2, "observed_stop_and_read_ms": 2.235331000001395}
+{"test": "D13 Writes unavailable until controlled promotion", "passed": true, "write_rejected": true, "replica_not_implicitly_promoted": true}
+{"test": "D14 Fenced manual promotion, epoch guard and successful write", "passed": true, "new_primary": "s0-replica", "epoch": 2, "old_epoch_http": 409, "order_version": 3, "order_status": "DELIVERED", "last_seq": 67}
+{"test": "D15 Rejoin fenced old primary and recover replication", "passed": true, "old_node_role": "replica", "epoch": 2, "last_applied": 67, "hashes_equal": true}
+{"test": "D16 Durable state after replica restart", "passed": true, "last_applied": 55, "projection_hash_unchanged": true}
+{
+  "executed_at_utc": "2026-11-22T18:53:47.390+00:00",
+  "tests": [
+    {
+      "test": "D01 Four independent database server processes",
+      "passed": true,
+      "pids": {
+        "s0-primary": 3874,
+        "s0-replica": 3876,
+        "s1-primary": 3878,
+        "s1-replica": 3880
+      },
+      "ports": {
+        "s0-primary": 8810,
+        "s0-replica": 8811,
+        "s1-primary": 8820,
+        "s1-replica": 8821
+      }
+    },
+    {
+      "test": "D02 Real horizontal partitioning of delivery records",
+      "passed": true,
+      "rule": "order_id % 2",
+      "shard_counts": {
+        "0": 65,
+        "1": 55
+      },
+      "total": 120
+    },
+    {
+      "test": "D03 Asynchronous event-log replication",
+      "passed": true,
+      "watermarks": {
+        "0": 65,
+        "1": 55
+      },
+      "pairwise_projection_hashes_equal": true
+    },
+    {
+      "test": "D04 Idempotent application-event retry",
+      "passed": true,
+      "event_id": "source-119588-v1",
+      "original_seq": 1,
+      "replay_seq": 1
+    },
+    {
+      "test": "D05 Routing and replica write protection",
+      "passed": true,
+      "wrong_shard_http": 409,
+      "replica_write_http": 403
+    },
+    {
+      "test": "D06 Controlled replication pause produces stale read",
+      "passed": true,
+      "order_id": 119588,
+      "primary_version": 2,
+      "replica_version": 1,
+      "lag_events": 1,
+      "fault": "replication worker paused; not an OS network partition"
+    },
+    {
+      "test": "D07 Session watermark refuses a stale response",
+      "passed": true,
+      "required_seq": 66,
+      "http_status": 503,
+      "error": "node behind requested session watermark"
+    },
+    {
+      "test": "D08 Promotion requires an explicit fencing step",
+      "passed": true,
+      "http_status": 412,
+      "error": "old primary must be fenced first"
+    },
+    {
+      "test": "D09 Resume replication and regain session consistency",
+      "passed": true,
+      "replica_version": 2,
+      "last_applied": 66,
+      "hashes_equal": true
+    },
+    {
+      "test": "D10 Optimistic concurrency rejects stale client version",
+      "passed": true,
+      "http_status": 409,
+      "error": "version conflict"
+    },
+    {
+      "test": "D11 Replication replay is idempotent",
+      "passed": true,
+      "duplicates": 1,
+      "new_events": 0
+    },
+    {
+      "test": "D12 Read availability after actual primary process termination",
+      "passed": true,
+      "old_primary_exit_code": -15,
+      "served_by": "s0-replica",
+      "version": 2,
+      "observed_stop_and_read_ms": 2.235331000001395
+    },
+    {
+      "test": "D13 Writes unavailable until controlled promotion",
+      "passed": true,
+      "write_rejected": true,
+      "replica_not_implicitly_promoted": true
+    },
+    {
+      "test": "D14 Fenced manual promotion, epoch guard and successful write",
+      "passed": true,
+      "new_primary": "s0-replica",
+      "epoch": 2,
+      "old_epoch_http": 409,
+      "order_version": 3,
+      "order_status": "DELIVERED",
+      "last_seq": 67
+    },
+    {
+      "test": "D15 Rejoin fenced old primary and recover replication",
+      "passed": true,
+      "old_node_role": "replica",
+      "epoch": 2,
+      "last_applied": 67,
+      "hashes_equal": true
+    },
+    {
+      "test": "D16 Durable state after replica restart",
+      "passed": true,
+      "last_applied": 55,
+      "projection_hash_unchanged": true
+    }
+  ],
+  "passed_count": 16,
+  "all_passed": true,
+  "deployment": "four local HTTP processes, two shards, one replica each; application-level event-log replication",
+  "cloud_deployed": false,
+  "consensus_implemented": false,
+  "real_network_partition_tested": false,
+  "source_linked_delivery_records": 120,
+  "final_roles": {
+    "s0-primary": "replica",
+    "s0-replica": "primary",
+    "s1-primary": "primary",
+    "s1-replica": "replica"
+  },
+  "scope_limit": "one physical host; manually fenced failover; no production HA claim"
+}

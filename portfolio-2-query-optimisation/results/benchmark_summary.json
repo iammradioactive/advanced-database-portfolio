@@ -1,0 +1,214 @@
+{
+  "executed_at_utc": "2026-11-22T18:53:42.455+00:00",
+  "method": {
+    "clock": "perf_counter_ns",
+    "timed_work": "execute + fetchall; excludes plan capture",
+    "cache": "warm; three warm-ups per variant",
+    "measurement_runs": 11,
+    "concurrent_load": "no workload intentionally generated; shared-host noise uncontrolled",
+    "limitations": "not cold-cache, not an SLA, not a server throughput test",
+    "index_build_ms": 378.3659400000019,
+    "database_bytes_before": 52842496,
+    "database_bytes_after": 63070208,
+    "index_sizes_bytes": [
+      [
+        "opt_orders_created_status",
+        4698112
+      ],
+      [
+        "opt_orders_customer_recent",
+        5500928
+      ],
+      [
+        "opt_paid_queue",
+        28672
+      ]
+    ]
+  },
+  "comparisons": [
+    {
+      "query": "q1",
+      "before_median_ms": 4.696548,
+      "after_median_ms": 0.018166,
+      "speedup": 258.53506550699103,
+      "reduction_percent": 99.61320527331989,
+      "rows": 20,
+      "identical_results": true
+    },
+    {
+      "query": "q2",
+      "before_median_ms": 13.667974,
+      "after_median_ms": 0.076016,
+      "speedup": 179.80390970322037,
+      "reduction_percent": 99.4438385674424,
+      "rows": 6,
+      "identical_results": true
+    },
+    {
+      "query": "q3",
+      "before_median_ms": 5.565786,
+      "after_median_ms": 0.038456,
+      "speedup": 144.7312773039318,
+      "reduction_percent": 99.30906434419146,
+      "rows": 50,
+      "identical_results": true
+    }
+  ],
+  "variants": {
+    "q1_before": {
+      "label": "q1_before",
+      "file": "q1_customer_history_before.sql",
+      "median_ms": 4.696548,
+      "min_ms": 4.674134,
+      "max_ms": 4.786775,
+      "stdev_ms": 0.033007051231792484,
+      "runs": 11,
+      "warmups": 3,
+      "rows": 20,
+      "result_sha256": "8348cf08afe582f9b2f58a8d30554cfdffe81d671369d4a8802592c9b4e9345f",
+      "plan": [
+        "SCAN orders",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ]
+    },
+    "q2_before": {
+      "label": "q2_before",
+      "file": "q2_daily_orders_before.sql",
+      "median_ms": 13.667974,
+      "min_ms": 13.529321,
+      "max_ms": 14.767792,
+      "stdev_ms": 0.34169284380667236,
+      "runs": 11,
+      "warmups": 3,
+      "rows": 6,
+      "result_sha256": "dd6268ead7bc26228d813998ae07105781e86b79a19fff1f6eb71ae014d49392",
+      "plan": [
+        "SCAN orders",
+        "USE TEMP B-TREE FOR GROUP BY"
+      ]
+    },
+    "q3_before": {
+      "label": "q3_before",
+      "file": "q3_paid_queue_before.sql",
+      "median_ms": 5.565786,
+      "min_ms": 5.462413,
+      "max_ms": 8.148303,
+      "stdev_ms": 0.7920992604258981,
+      "runs": 11,
+      "warmups": 3,
+      "rows": 50,
+      "result_sha256": "9f0fc300c4e33a7aa64f3a272112956958f219ddd7d3926db218c075d5486f14",
+      "plan": [
+        "SCAN orders",
+        "USE TEMP B-TREE FOR ORDER BY"
+      ]
+    },
+    "q2_rewrite_only": {
+      "label": "q2_rewrite_only",
+      "file": "q2_daily_orders_after.sql",
+      "median_ms": 5.761469,
+      "min_ms": 5.715508,
+      "max_ms": 7.184419,
+      "stdev_ms": 0.43145700053611163,
+      "runs": 11,
+      "warmups": 3,
+      "rows": 6,
+      "result_sha256": "dd6268ead7bc26228d813998ae07105781e86b79a19fff1f6eb71ae014d49392",
+      "plan": [
+        "SCAN orders",
+        "USE TEMP B-TREE FOR GROUP BY"
+      ]
+    },
+    "q2_index_only": {
+      "label": "q2_index_only",
+      "file": "q2_daily_orders_before.sql",
+      "median_ms": 12.318895,
+      "min_ms": 12.178506,
+      "max_ms": 12.481182,
+      "stdev_ms": 0.08422171788688589,
+      "runs": 11,
+      "warmups": 3,
+      "rows": 6,
+      "result_sha256": "dd6268ead7bc26228d813998ae07105781e86b79a19fff1f6eb71ae014d49392",
+      "plan": [
+        "SCAN orders USING COVERING INDEX opt_orders_created_status",
+        "USE TEMP B-TREE FOR GROUP BY"
+      ]
+    },
+    "q1_after": {
+      "label": "q1_after",
+      "file": "q1_customer_history_after.sql",
+      "median_ms": 0.018166,
+      "min_ms": 0.017918,
+      "max_ms": 0.019658,
+      "stdev_ms": 0.0004862533196895324,
+      "runs": 11,
+      "warmups": 3,
+      "rows": 20,
+      "result_sha256": "8348cf08afe582f9b2f58a8d30554cfdffe81d671369d4a8802592c9b4e9345f",
+      "plan": [
+        "SEARCH orders USING COVERING INDEX opt_orders_customer_recent (customer_id=?)"
+      ]
+    },
+    "q2_after": {
+      "label": "q2_after",
+      "file": "q2_daily_orders_after.sql",
+      "median_ms": 0.076016,
+      "min_ms": 0.075456,
+      "max_ms": 0.086464,
+      "stdev_ms": 0.0032199483366832293,
+      "runs": 11,
+      "warmups": 3,
+      "rows": 6,
+      "result_sha256": "dd6268ead7bc26228d813998ae07105781e86b79a19fff1f6eb71ae014d49392",
+      "plan": [
+        "SEARCH orders USING COVERING INDEX opt_orders_created_status (created_at>? AND created_at<?)",
+        "USE TEMP B-TREE FOR GROUP BY"
+      ]
+    },
+    "q3_after": {
+      "label": "q3_after",
+      "file": "q3_paid_queue_after.sql",
+      "median_ms": 0.038456,
+      "min_ms": 0.036649,
+      "max_ms": 0.100981,
+      "stdev_ms": 0.018872023843871023,
+      "runs": 11,
+      "warmups": 3,
+      "rows": 50,
+      "result_sha256": "9f0fc300c4e33a7aa64f3a272112956958f219ddd7d3926db218c075d5486f14",
+      "plan": [
+        "SCAN orders USING COVERING INDEX opt_paid_queue"
+      ]
+    }
+  },
+  "additional_business_queries": [
+    {
+      "query": "q4_category_revenue.sql",
+      "rows": 6,
+      "elapsed_ms": 28.32321200000365,
+      "sha256": "0a4687899ff5c754869830effac98bd8227c5f3489cd61ef9e65115881cb52f4"
+    },
+    {
+      "query": "q5_customer_rank.sql",
+      "rows": 10,
+      "elapsed_ms": 52.46778999999435,
+      "sha256": "be81f6bbbae182660bc117fc17cce89a13442c57470948f8458996b4d3e93e7f"
+    },
+    {
+      "query": "q6_dispatch_exceptions.sql",
+      "rows": 30,
+      "elapsed_ms": 0.09103600000059942,
+      "sha256": "d4f8d3473131b710011e97de843899e7e7a8145f42c9f5b1672c02433a28d0d6"
+    }
+  ],
+  "environment": {
+    "captured_at_utc": "2026-11-22T18:53:42.455+00:00",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "sqlite": "3.45.1",
+    "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+    "cpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "logical_cpus": 2,
+    "timing_scope": "GitHub Actions runner; no production capacity claim"
+  }
+}

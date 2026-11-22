@@ -1,0 +1,8 @@
+[
+  [
+    4,
+    0,
+    0,
+    "SEARCH orders USING COVERING INDEX opt_orders_customer_recent (customer_id=?)"
+  ]
+]

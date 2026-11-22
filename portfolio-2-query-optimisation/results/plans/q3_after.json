@@ -1,0 +1,8 @@
+[
+  [
+    4,
+    0,
+    0,
+    "SCAN orders USING COVERING INDEX opt_paid_queue"
+  ]
+]

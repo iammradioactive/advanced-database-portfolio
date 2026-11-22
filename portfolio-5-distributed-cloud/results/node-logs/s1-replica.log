@@ -1,0 +1,25 @@
+{"host":"127.0.0.1","meta":{"epoch":1,"last_applied":0,"node_id":"s1-replica","role":"replica","shard_id":1,"singleton":1},"pid":3880,"port":8821,"startup":true}
+{"at_utc": "2026-11-22T18:53:46.574680+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:46.696175+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:46.706821+00:00", "node": "s1-replica", "request": "\"POST /replicate HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:46.758978+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:46.763724+00:00", "node": "s1-replica", "request": "\"POST /replicate HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:46.815729+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:46.820673+00:00", "node": "s1-replica", "request": "\"POST /replicate HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:46.872399+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:46.877567+00:00", "node": "s1-replica", "request": "\"POST /replicate HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:46.929469+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:46.933925+00:00", "node": "s1-replica", "request": "\"POST /replicate HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:46.985879+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:46.991649+00:00", "node": "s1-replica", "request": "\"POST /replicate HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:47.035056+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:47.043937+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:47.097147+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:47.151654+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:47.205067+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:47.258379+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:47.310409+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"host":"127.0.0.1","meta":{"epoch":1,"last_applied":55,"node_id":"s1-replica","role":"replica","shard_id":1,"singleton":1},"pid":4097,"port":8821,"startup":true}
+{"at_utc": "2026-11-22T18:53:47.374308+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:47.379277+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}
+{"at_utc": "2026-11-22T18:53:47.387623+00:00", "node": "s1-replica", "request": "\"GET /status HTTP/1.1\" 200 -"}

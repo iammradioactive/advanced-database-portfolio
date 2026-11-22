@@ -1,0 +1,130 @@
+2026-11-22T18:53:43.224+00:00 [checkout] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.224+00:00 [checkout] SELECT count(*) FROM orders
+2026-11-22T18:53:43.226+00:00 [checkout] BEGIN IMMEDIATE
+2026-11-22T18:53:43.226+00:00 [checkout] SELECT aggregate_id,payload_json FROM outbox WHERE event_id='checkout:portfolio-checkout'
+2026-11-22T18:53:43.226+00:00 [checkout] INSERT INTO orders(customer_id,shipping_address_no,warehouse_id,status,created_at,delivery_fee_kobo) VALUES (1,1,1,'RESERVED','2026-11-22T18:53:43Z',150000)
+2026-11-22T18:53:43.226+00:00 [checkout] SELECT unit_price_kobo FROM products WHERE product_id=1 AND active=1
+2026-11-22T18:53:43.226+00:00 [checkout] UPDATE inventory SET reserved=reserved+2 WHERE warehouse_id=1 AND product_id=1 AND on_hand-reserved>=2
+2026-11-22T18:53:43.226+00:00 [checkout] INSERT INTO order_items VALUES (120001,1,1,2,1140000)
+2026-11-22T18:53:43.226+00:00 [checkout] INSERT INTO order_items VALUES (120001,1,1,2,1140000)
+2026-11-22T18:53:43.226+00:00 [checkout] SELECT unit_price_kobo FROM products WHERE product_id=2 AND active=1
+2026-11-22T18:53:43.226+00:00 [checkout] UPDATE inventory SET reserved=reserved+1 WHERE warehouse_id=1 AND product_id=2 AND on_hand-reserved>=1
+2026-11-22T18:53:43.226+00:00 [checkout] INSERT INTO order_items VALUES (120001,2,2,1,2280000)
+2026-11-22T18:53:43.227+00:00 [checkout] INSERT INTO order_items VALUES (120001,2,2,1,2280000)
+2026-11-22T18:53:43.227+00:00 [checkout] INSERT INTO outbox VALUES ('checkout:portfolio-checkout','order',120001,'order.reserved','{"order_id": 120001, "request_hash": "3979ec6e90749e663828a21c8123c25abc10161e433408ff44c42c1ce28472b8", "items": [[1, 2], [2, 1]]}','2026-11-22T18:53:43Z',NULL)
+2026-11-22T18:53:43.227+00:00 [checkout] COMMIT
+2026-11-22T18:53:43.228+00:00 [checkout] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.230+00:00 [reopened] SELECT status FROM orders WHERE order_id=120001
+2026-11-22T18:53:43.230+00:00 [reopened] SELECT count(*) FROM orders
+2026-11-22T18:53:43.231+00:00 [reopened] BEGIN IMMEDIATE
+2026-11-22T18:53:43.232+00:00 [reopened] SELECT aggregate_id,payload_json FROM outbox WHERE event_id='checkout:portfolio-checkout'
+2026-11-22T18:53:43.232+00:00 [reopened] COMMIT
+2026-11-22T18:53:43.232+00:00 [reopened] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.232+00:00 [reopened] BEGIN IMMEDIATE
+2026-11-22T18:53:43.232+00:00 [reopened] SELECT aggregate_id,payload_json FROM outbox WHERE event_id='checkout:portfolio-checkout'
+2026-11-22T18:53:43.232+00:00 [reopened] ROLLBACK
+2026-11-22T18:53:43.232+00:00 [reopened] SELECT count(*) FROM orders
+2026-11-22T18:53:43.232+00:00 [reopened] SELECT count(*) FROM order_items
+2026-11-22T18:53:43.234+00:00 [reopened] SELECT count(*) FROM outbox
+2026-11-22T18:53:43.234+00:00 [reopened] SELECT * FROM inventory WHERE warehouse_id=1 AND product_id IN (1,2) ORDER BY product_id
+2026-11-22T18:53:43.234+00:00 [reopened] SELECT available FROM v_stock_availability WHERE warehouse_id=1 AND product_id=2
+2026-11-22T18:53:43.234+00:00 [reopened] BEGIN IMMEDIATE
+2026-11-22T18:53:43.234+00:00 [reopened] SELECT aggregate_id,payload_json FROM outbox WHERE event_id='checkout:fail-after-first-line'
+2026-11-22T18:53:43.234+00:00 [reopened] INSERT INTO orders(customer_id,shipping_address_no,warehouse_id,status,created_at,delivery_fee_kobo) VALUES (1,1,1,'RESERVED','2026-11-22T18:53:43Z',150000)
+2026-11-22T18:53:43.234+00:00 [reopened] SELECT unit_price_kobo FROM products WHERE product_id=1 AND active=1
+2026-11-22T18:53:43.234+00:00 [reopened] UPDATE inventory SET reserved=reserved+1 WHERE warehouse_id=1 AND product_id=1 AND on_hand-reserved>=1
+2026-11-22T18:53:43.234+00:00 [reopened] INSERT INTO order_items VALUES (120002,1,1,1,1140000)
+2026-11-22T18:53:43.234+00:00 [reopened] INSERT INTO order_items VALUES (120002,1,1,1,1140000)
+2026-11-22T18:53:43.234+00:00 [reopened] SELECT unit_price_kobo FROM products WHERE product_id=2 AND active=1
+2026-11-22T18:53:43.234+00:00 [reopened] UPDATE inventory SET reserved=reserved+397 WHERE warehouse_id=1 AND product_id=2 AND on_hand-reserved>=397
+2026-11-22T18:53:43.234+00:00 [reopened] ROLLBACK
+2026-11-22T18:53:43.234+00:00 [reopened] SELECT count(*) FROM orders
+2026-11-22T18:53:43.235+00:00 [reopened] SELECT count(*) FROM order_items
+2026-11-22T18:53:43.236+00:00 [reopened] SELECT count(*) FROM outbox
+2026-11-22T18:53:43.236+00:00 [reopened] SELECT * FROM inventory WHERE warehouse_id=1 AND product_id IN (1,2) ORDER BY product_id
+2026-11-22T18:53:43.236+00:00 [reopened] BEGIN IMMEDIATE
+2026-11-22T18:53:43.236+00:00 [reopened] SELECT payment_id,order_id,status FROM payment_attempts WHERE provider_reference='SIMULATED-PAY-8103'
+2026-11-22T18:53:43.236+00:00 [reopened] SELECT status FROM orders WHERE order_id=120001
+2026-11-22T18:53:43.236+00:00 [reopened] SELECT payable_kobo FROM v_order_totals WHERE order_id=120001
+2026-11-22T18:53:43.237+00:00 [reopened] INSERT INTO payment_attempts(order_id,provider_reference,amount_kobo,status,attempted_at) VALUES (120001,'SIMULATED-PAY-8103',4710000,'SUCCEEDED','2026-11-22T18:53:43Z')
+2026-11-22T18:53:43.237+00:00 [reopened] INSERT INTO payment_attempts(order_id,provider_reference,amount_kobo,status,attempted_at) VALUES (120001,'SIMULATED-PAY-8103',4710000,'SUCCEEDED','2026-11-22T18:53:43Z')
+2026-11-22T18:53:43.237+00:00 [reopened] INSERT INTO payment_attempts(order_id,provider_reference,amount_kobo,status,attempted_at) VALUES (120001,'SIMULATED-PAY-8103',4710000,'SUCCEEDED','2026-11-22T18:53:43Z')
+2026-11-22T18:53:43.237+00:00 [reopened] UPDATE orders SET status='PAID' WHERE order_id=120001
+2026-11-22T18:53:43.237+00:00 [reopened] INSERT INTO outbox VALUES ('payment:SIMULATED-PAY-8103','order',120001,'order.paid','{"order_id": 120001, "payment_id": 128730, "amount_kobo": 4710000}','2026-11-22T18:53:43Z',NULL)
+2026-11-22T18:53:43.237+00:00 [reopened] COMMIT
+2026-11-22T18:53:43.238+00:00 [reopened] BEGIN IMMEDIATE
+2026-11-22T18:53:43.238+00:00 [reopened] SELECT payment_id,order_id,status FROM payment_attempts WHERE provider_reference='SIMULATED-PAY-8103'
+2026-11-22T18:53:43.238+00:00 [reopened] COMMIT
+2026-11-22T18:53:43.238+00:00 [reopened] SELECT status FROM orders WHERE order_id=120001
+2026-11-22T18:53:43.238+00:00 [reopened] SELECT on_hand,reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.239+00:00 [fixture] UPDATE inventory SET on_hand=10,reserved=0 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.241+00:00 [savepoint] BEGIN IMMEDIATE
+2026-11-22T18:53:43.241+00:00 [savepoint] UPDATE inventory SET reserved=reserved+1 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.241+00:00 [savepoint] SAVEPOINT optional_reservation
+2026-11-22T18:53:43.241+00:00 [savepoint] UPDATE inventory SET reserved=11 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.241+00:00 [savepoint] ROLLBACK TO optional_reservation
+2026-11-22T18:53:43.241+00:00 [savepoint] RELEASE optional_reservation
+2026-11-22T18:53:43.241+00:00 [savepoint] COMMIT
+2026-11-22T18:53:43.242+00:00 [savepoint] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.242+00:00 [fixture] UPDATE inventory SET on_hand=10,reserved=0 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.243+00:00 [dirty-A] BEGIN IMMEDIATE
+2026-11-22T18:53:43.243+00:00 [dirty-A] UPDATE inventory SET reserved=4 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.243+00:00 [dirty-A] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.243+00:00 [dirty-B] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.243+00:00 [dirty-A] ROLLBACK
+2026-11-22T18:53:43.243+00:00 [dirty-B] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.244+00:00 [fixture] UPDATE inventory SET on_hand=10,reserved=0 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.244+00:00 [snapshot-A] BEGIN
+2026-11-22T18:53:43.244+00:00 [snapshot-A] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.244+00:00 [snapshot-B] BEGIN IMMEDIATE
+2026-11-22T18:53:43.244+00:00 [snapshot-B] UPDATE inventory SET reserved=2 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.244+00:00 [snapshot-B] COMMIT
+2026-11-22T18:53:43.245+00:00 [snapshot-A] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.245+00:00 [snapshot-A] UPDATE inventory SET reserved=reserved+1 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.245+00:00 [snapshot-A] ROLLBACK
+2026-11-22T18:53:43.245+00:00 [snapshot-A] BEGIN IMMEDIATE
+2026-11-22T18:53:43.245+00:00 [snapshot-A] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.245+00:00 [snapshot-A] UPDATE inventory SET reserved=reserved+1 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.245+00:00 [snapshot-A] COMMIT
+2026-11-22T18:53:43.246+00:00 [snapshot-A] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.884+00:00 [shared-A] BEGIN IMMEDIATE
+2026-11-22T18:53:43.884+00:00 [shared-A] UPDATE inventory SET reserved=4 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.885+00:00 [shared-B] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.885+00:00 [shared-B] PRAGMA read_uncommitted=1
+2026-11-22T18:53:43.885+00:00 [shared-B] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.885+00:00 [shared-A] ROLLBACK
+2026-11-22T18:53:43.885+00:00 [shared-B] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.885+00:00 [fixture] UPDATE inventory SET on_hand=10,reserved=0 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.887+00:00 [stale-A] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.887+00:00 [stale-B] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.887+00:00 [stale-A] UPDATE inventory SET reserved=3 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.888+00:00 [stale-B] UPDATE inventory SET reserved=3 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.889+00:00 [lost-check] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.889+00:00 [fixture] UPDATE inventory SET on_hand=10,reserved=0 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.891+00:00 [protected-A] BEGIN IMMEDIATE
+2026-11-22T18:53:43.891+00:00 [protected-A] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.891+00:00 [protected-B] BEGIN IMMEDIATE
+2026-11-22T18:53:43.971+00:00 [protected-A] UPDATE inventory SET reserved=3 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.971+00:00 [protected-A] COMMIT
+2026-11-22T18:53:43.995+00:00 [protected-B] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.995+00:00 [protected-B] UPDATE inventory SET reserved=6 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.995+00:00 [protected-B] COMMIT
+2026-11-22T18:53:43.996+00:00 [protected-check] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.996+00:00 [fixture] UPDATE inventory SET on_hand=10,reserved=0 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:43.998+00:00 [guard-B] UPDATE inventory SET reserved=reserved+7 WHERE warehouse_id=1 AND product_id=1 AND on_hand-reserved>=7
+2026-11-22T18:53:43.998+00:00 [guard-A] UPDATE inventory SET reserved=reserved+7 WHERE warehouse_id=1 AND product_id=1 AND on_hand-reserved>=7
+2026-11-22T18:53:44.000+00:00 [guard-check] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:44.000+00:00 [fixture] UPDATE inventory SET on_hand=10,reserved=0 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:44.001+00:00 [lock-A] BEGIN IMMEDIATE
+2026-11-22T18:53:44.001+00:00 [lock-B] UPDATE inventory SET reserved=reserved+1 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:44.052+00:00 [lock-A] ROLLBACK
+2026-11-22T18:53:44.052+00:00 [lock-B] UPDATE inventory SET reserved=reserved+1 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:44.053+00:00 [lock-B] SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:44.053+00:00 [restore] UPDATE inventory SET on_hand=250,reserved=6 WHERE warehouse_id=1 AND product_id=1
+2026-11-22T18:53:44.054+00:00 [restore] PRAGMA integrity_check
+2026-11-22T18:53:44.899+00:00 [restore] SELECT count(*) FROM inventory inv LEFT JOIN
+       (SELECT o.warehouse_id,i.product_id,sum(i.quantity) qty FROM orders o JOIN order_items i USING(order_id)
+        WHERE o.status IN ('RESERVED','PAID') GROUP BY o.warehouse_id,i.product_id) x
+       ON inv.warehouse_id=x.warehouse_id AND inv.product_id=x.product_id
+       WHERE inv.reserved<>coalesce(x.qty,0)
+2026-11-22T18:53:44.908+00:00 [restore] PRAGMA wal_checkpoint(TRUNCATE)

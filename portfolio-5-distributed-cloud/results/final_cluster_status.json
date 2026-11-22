@@ -1,0 +1,50 @@
+{
+  "s0-primary": {
+    "epoch": 2,
+    "event_count": 67,
+    "last_applied": 67,
+    "node_id": "s0-primary",
+    "orders_count": 65,
+    "pid": 4080,
+    "projection_sha256": "3bf483c52cb83e2a933ec03163ccc3b4d699bdce7e61531f3885cd8a42d9ba22",
+    "role": "replica",
+    "shard_id": 0,
+    "singleton": 1
+  },
+  "s0-replica": {
+    "epoch": 2,
+    "event_count": 67,
+    "last_applied": 67,
+    "node_id": "s0-replica",
+    "orders_count": 65,
+    "pid": 3876,
+    "projection_sha256": "3bf483c52cb83e2a933ec03163ccc3b4d699bdce7e61531f3885cd8a42d9ba22",
+    "role": "primary",
+    "shard_id": 0,
+    "singleton": 1
+  },
+  "s1-primary": {
+    "epoch": 1,
+    "event_count": 55,
+    "last_applied": 55,
+    "node_id": "s1-primary",
+    "orders_count": 55,
+    "pid": 3878,
+    "projection_sha256": "8020a39c36fda9ec8951e91bc4a5ac75ace376beb36374835f67f4bdf5c5bc86",
+    "role": "primary",
+    "shard_id": 1,
+    "singleton": 1
+  },
+  "s1-replica": {
+    "epoch": 1,
+    "event_count": 55,
+    "last_applied": 55,
+    "node_id": "s1-replica",
+    "orders_count": 55,
+    "pid": 4097,
+    "projection_sha256": "8020a39c36fda9ec8951e91bc4a5ac75ace376beb36374835f67f4bdf5c5bc86",
+    "role": "replica",
+    "shard_id": 1,
+    "singleton": 1
+  }
+}

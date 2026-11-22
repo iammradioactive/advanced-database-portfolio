@@ -1,0 +1,125 @@
+{
+  "executed_at_utc": "2026-11-22T18:53:46.169+00:00",
+  "backend": "Berkeley DB",
+  "tests": [
+    {
+      "test": "N01 Persist 600 JSON product documents in an independent key-value engine",
+      "passed": true,
+      "backend": "Berkeley DB",
+      "interface": "dbm.ndbm",
+      "loaded": 600
+    },
+    {
+      "test": "N02 Cross-model consistency",
+      "passed": true,
+      "matching_products": 600
+    },
+    {
+      "test": "N03 Primary-key lookup",
+      "passed": true,
+      "key": "product:LM-01-0001",
+      "value": {
+        "active": true,
+        "attributes": {
+          "allergen_note": "see packaging",
+          "brand": "Lagoon Select",
+          "pack_units": 1,
+          "storage": "cool dry place",
+          "unit_size": "5 kg"
+        },
+        "category": "Groceries",
+        "category_id": 1,
+        "name": "Lagoon Select Parboiled rice (5 kg; 1 unit pack)",
+        "price_kobo": 1140000,
+        "product_id": 1,
+        "schema_version": 1,
+        "sku": "LM-01-0001"
+      }
+    },
+    {
+      "test": "N04 Category index plus price filter",
+      "passed": true,
+      "category_id": 1,
+      "max_price_kobo": 600000,
+      "result_count": 60,
+      "sql_result_equal": true
+    },
+    {
+      "test": "N05 Nested flexible-attribute query",
+      "passed": true,
+      "result_count": 55,
+      "warranty_min_months": 12,
+      "max_price_kobo": 1000000
+    },
+    {
+      "test": "N06 Update a document without relational DDL",
+      "passed": true,
+      "added_attributes": [
+        "origin_region",
+        "recyclable_packaging"
+      ]
+    },
+    {
+      "test": "N07 Delete and restore with maintained category index",
+      "passed": true,
+      "count_after_delete": 99,
+      "count_after_restore": 100
+    },
+    {
+      "test": "N08 Category change updates secondary keys",
+      "passed": true,
+      "during_move_counts": {
+        "category_1": 99,
+        "category_2": 101
+      },
+      "restored_indexes_valid": true
+    },
+    {
+      "test": "N09 Generic key-value insertion/read/deletion",
+      "passed": true,
+      "draft_published": false
+    },
+    {
+      "test": "N10 Embedded bounded delivery history",
+      "passed": true,
+      "documents": 20,
+      "example_order_id": 119997
+    },
+    {
+      "test": "N11 Application-managed TTL",
+      "passed": true,
+      "ttl_seconds": 1,
+      "elapsed_seconds": 1.050718369000002,
+      "expired_cart_deleted": true,
+      "native_engine_ttl": false
+    },
+    {
+      "test": "N12 Persistence across independent processes",
+      "passed": true,
+      "read_back_sku": "LM-01-0001"
+    },
+    {
+      "test": "N13 Application document validation",
+      "passed": true,
+      "rejected": "price_kobo must be a positive integer"
+    },
+    {
+      "test": "N14 Repair application-maintained index after injected deletion",
+      "passed": true,
+      "damage_detected": true,
+      "indexes_valid_after_rebuild": true
+    },
+    {
+      "test": "N15 Portable JSON export/import",
+      "passed": true,
+      "documents": 600,
+      "sha256": "1c19a6c3cbdabd8ecdf5fd5352b890054cc31394409524545efc8ff7876979d3"
+    }
+  ],
+  "passed_count": 15,
+  "all_passed": true,
+  "final_product_count": 600,
+  "final_indexes_valid": true,
+  "final_catalogue_matches_seed": true,
+  "native_multikey_transactions_claimed": false
+}

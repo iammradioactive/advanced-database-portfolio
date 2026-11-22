@@ -1,0 +1,99 @@
+{
+  "executed_at_utc": "2026-11-22T18:53:47.389+00:00",
+  "nodes": [
+    {
+      "node_id": "s0-primary",
+      "shard": 0,
+      "role": "primary",
+      "port": 8810,
+      "db": ".runtime/cluster/s0-primary.sqlite"
+    },
+    {
+      "node_id": "s0-replica",
+      "shard": 0,
+      "role": "replica",
+      "port": 8811,
+      "db": ".runtime/cluster/s0-replica.sqlite"
+    },
+    {
+      "node_id": "s1-primary",
+      "shard": 1,
+      "role": "primary",
+      "port": 8820,
+      "db": ".runtime/cluster/s1-primary.sqlite"
+    },
+    {
+      "node_id": "s1-replica",
+      "shard": 1,
+      "role": "replica",
+      "port": 8821,
+      "db": ".runtime/cluster/s1-replica.sqlite"
+    }
+  ],
+  "process_lifecycle": [
+    {
+      "at_utc": "2026-11-22T18:53:46.356+00:00",
+      "action": "start",
+      "node": "s0-primary",
+      "pid": 3874,
+      "port": 8810,
+      "role": "primary"
+    },
+    {
+      "at_utc": "2026-11-22T18:53:46.419+00:00",
+      "action": "start",
+      "node": "s0-replica",
+      "pid": 3876,
+      "port": 8811,
+      "role": "replica"
+    },
+    {
+      "at_utc": "2026-11-22T18:53:46.512+00:00",
+      "action": "start",
+      "node": "s1-primary",
+      "pid": 3878,
+      "port": 8820,
+      "role": "primary"
+    },
+    {
+      "at_utc": "2026-11-22T18:53:46.575+00:00",
+      "action": "start",
+      "node": "s1-replica",
+      "pid": 3880,
+      "port": 8821,
+      "role": "replica"
+    },
+    {
+      "at_utc": "2026-11-22T18:53:47.146+00:00",
+      "action": "stop",
+      "node": "s0-primary",
+      "pid": 3874,
+      "exit_code": -15
+    },
+    {
+      "at_utc": "2026-11-22T18:53:47.217+00:00",
+      "action": "start",
+      "node": "s0-primary",
+      "pid": 4080,
+      "port": 8810,
+      "role": "replica"
+    },
+    {
+      "at_utc": "2026-11-22T18:53:47.311+00:00",
+      "action": "stop",
+      "node": "s1-replica",
+      "pid": 3880,
+      "exit_code": -15
+    },
+    {
+      "at_utc": "2026-11-22T18:53:47.374+00:00",
+      "action": "start",
+      "node": "s1-replica",
+      "pid": 4097,
+      "port": 8821,
+      "role": "replica"
+    }
+  ],
+  "physical_hosts": 1,
+  "cloud_deployed": false
+}

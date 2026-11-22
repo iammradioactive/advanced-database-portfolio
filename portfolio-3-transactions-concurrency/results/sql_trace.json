@@ -1,0 +1,632 @@
+[
+  {
+    "at_utc": "2026-11-22T18:53:43.224+00:00",
+    "connection": "checkout",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.224+00:00",
+    "connection": "checkout",
+    "sql": "SELECT count(*) FROM orders"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.226+00:00",
+    "connection": "checkout",
+    "sql": "BEGIN IMMEDIATE"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.226+00:00",
+    "connection": "checkout",
+    "sql": "SELECT aggregate_id,payload_json FROM outbox WHERE event_id='checkout:portfolio-checkout'"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.226+00:00",
+    "connection": "checkout",
+    "sql": "INSERT INTO orders(customer_id,shipping_address_no,warehouse_id,status,created_at,delivery_fee_kobo) VALUES (1,1,1,'RESERVED','2026-11-22T18:53:43Z',150000)"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.226+00:00",
+    "connection": "checkout",
+    "sql": "SELECT unit_price_kobo FROM products WHERE product_id=1 AND active=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.226+00:00",
+    "connection": "checkout",
+    "sql": "UPDATE inventory SET reserved=reserved+2 WHERE warehouse_id=1 AND product_id=1 AND on_hand-reserved>=2"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.226+00:00",
+    "connection": "checkout",
+    "sql": "INSERT INTO order_items VALUES (120001,1,1,2,1140000)"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.226+00:00",
+    "connection": "checkout",
+    "sql": "INSERT INTO order_items VALUES (120001,1,1,2,1140000)"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.226+00:00",
+    "connection": "checkout",
+    "sql": "SELECT unit_price_kobo FROM products WHERE product_id=2 AND active=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.226+00:00",
+    "connection": "checkout",
+    "sql": "UPDATE inventory SET reserved=reserved+1 WHERE warehouse_id=1 AND product_id=2 AND on_hand-reserved>=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.226+00:00",
+    "connection": "checkout",
+    "sql": "INSERT INTO order_items VALUES (120001,2,2,1,2280000)"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.227+00:00",
+    "connection": "checkout",
+    "sql": "INSERT INTO order_items VALUES (120001,2,2,1,2280000)"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.227+00:00",
+    "connection": "checkout",
+    "sql": "INSERT INTO outbox VALUES ('checkout:portfolio-checkout','order',120001,'order.reserved','{\"order_id\": 120001, \"request_hash\": \"3979ec6e90749e663828a21c8123c25abc10161e433408ff44c42c1ce28472b8\", \"items\": [[1, 2], [2, 1]]}','2026-11-22T18:53:43Z',NULL)"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.227+00:00",
+    "connection": "checkout",
+    "sql": "COMMIT"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.228+00:00",
+    "connection": "checkout",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.230+00:00",
+    "connection": "reopened",
+    "sql": "SELECT status FROM orders WHERE order_id=120001"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.230+00:00",
+    "connection": "reopened",
+    "sql": "SELECT count(*) FROM orders"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.231+00:00",
+    "connection": "reopened",
+    "sql": "BEGIN IMMEDIATE"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.232+00:00",
+    "connection": "reopened",
+    "sql": "SELECT aggregate_id,payload_json FROM outbox WHERE event_id='checkout:portfolio-checkout'"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.232+00:00",
+    "connection": "reopened",
+    "sql": "COMMIT"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.232+00:00",
+    "connection": "reopened",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.232+00:00",
+    "connection": "reopened",
+    "sql": "BEGIN IMMEDIATE"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.232+00:00",
+    "connection": "reopened",
+    "sql": "SELECT aggregate_id,payload_json FROM outbox WHERE event_id='checkout:portfolio-checkout'"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.232+00:00",
+    "connection": "reopened",
+    "sql": "ROLLBACK"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.232+00:00",
+    "connection": "reopened",
+    "sql": "SELECT count(*) FROM orders"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.232+00:00",
+    "connection": "reopened",
+    "sql": "SELECT count(*) FROM order_items"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.234+00:00",
+    "connection": "reopened",
+    "sql": "SELECT count(*) FROM outbox"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.234+00:00",
+    "connection": "reopened",
+    "sql": "SELECT * FROM inventory WHERE warehouse_id=1 AND product_id IN (1,2) ORDER BY product_id"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.234+00:00",
+    "connection": "reopened",
+    "sql": "SELECT available FROM v_stock_availability WHERE warehouse_id=1 AND product_id=2"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.234+00:00",
+    "connection": "reopened",
+    "sql": "BEGIN IMMEDIATE"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.234+00:00",
+    "connection": "reopened",
+    "sql": "SELECT aggregate_id,payload_json FROM outbox WHERE event_id='checkout:fail-after-first-line'"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.234+00:00",
+    "connection": "reopened",
+    "sql": "INSERT INTO orders(customer_id,shipping_address_no,warehouse_id,status,created_at,delivery_fee_kobo) VALUES (1,1,1,'RESERVED','2026-11-22T18:53:43Z',150000)"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.234+00:00",
+    "connection": "reopened",
+    "sql": "SELECT unit_price_kobo FROM products WHERE product_id=1 AND active=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.234+00:00",
+    "connection": "reopened",
+    "sql": "UPDATE inventory SET reserved=reserved+1 WHERE warehouse_id=1 AND product_id=1 AND on_hand-reserved>=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.234+00:00",
+    "connection": "reopened",
+    "sql": "INSERT INTO order_items VALUES (120002,1,1,1,1140000)"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.234+00:00",
+    "connection": "reopened",
+    "sql": "INSERT INTO order_items VALUES (120002,1,1,1,1140000)"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.234+00:00",
+    "connection": "reopened",
+    "sql": "SELECT unit_price_kobo FROM products WHERE product_id=2 AND active=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.234+00:00",
+    "connection": "reopened",
+    "sql": "UPDATE inventory SET reserved=reserved+397 WHERE warehouse_id=1 AND product_id=2 AND on_hand-reserved>=397"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.234+00:00",
+    "connection": "reopened",
+    "sql": "ROLLBACK"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.234+00:00",
+    "connection": "reopened",
+    "sql": "SELECT count(*) FROM orders"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.235+00:00",
+    "connection": "reopened",
+    "sql": "SELECT count(*) FROM order_items"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.236+00:00",
+    "connection": "reopened",
+    "sql": "SELECT count(*) FROM outbox"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.236+00:00",
+    "connection": "reopened",
+    "sql": "SELECT * FROM inventory WHERE warehouse_id=1 AND product_id IN (1,2) ORDER BY product_id"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.236+00:00",
+    "connection": "reopened",
+    "sql": "BEGIN IMMEDIATE"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.236+00:00",
+    "connection": "reopened",
+    "sql": "SELECT payment_id,order_id,status FROM payment_attempts WHERE provider_reference='SIMULATED-PAY-8103'"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.236+00:00",
+    "connection": "reopened",
+    "sql": "SELECT status FROM orders WHERE order_id=120001"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.236+00:00",
+    "connection": "reopened",
+    "sql": "SELECT payable_kobo FROM v_order_totals WHERE order_id=120001"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.237+00:00",
+    "connection": "reopened",
+    "sql": "INSERT INTO payment_attempts(order_id,provider_reference,amount_kobo,status,attempted_at) VALUES (120001,'SIMULATED-PAY-8103',4710000,'SUCCEEDED','2026-11-22T18:53:43Z')"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.237+00:00",
+    "connection": "reopened",
+    "sql": "INSERT INTO payment_attempts(order_id,provider_reference,amount_kobo,status,attempted_at) VALUES (120001,'SIMULATED-PAY-8103',4710000,'SUCCEEDED','2026-11-22T18:53:43Z')"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.237+00:00",
+    "connection": "reopened",
+    "sql": "INSERT INTO payment_attempts(order_id,provider_reference,amount_kobo,status,attempted_at) VALUES (120001,'SIMULATED-PAY-8103',4710000,'SUCCEEDED','2026-11-22T18:53:43Z')"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.237+00:00",
+    "connection": "reopened",
+    "sql": "UPDATE orders SET status='PAID' WHERE order_id=120001"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.237+00:00",
+    "connection": "reopened",
+    "sql": "INSERT INTO outbox VALUES ('payment:SIMULATED-PAY-8103','order',120001,'order.paid','{\"order_id\": 120001, \"payment_id\": 128730, \"amount_kobo\": 4710000}','2026-11-22T18:53:43Z',NULL)"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.237+00:00",
+    "connection": "reopened",
+    "sql": "COMMIT"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.238+00:00",
+    "connection": "reopened",
+    "sql": "BEGIN IMMEDIATE"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.238+00:00",
+    "connection": "reopened",
+    "sql": "SELECT payment_id,order_id,status FROM payment_attempts WHERE provider_reference='SIMULATED-PAY-8103'"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.238+00:00",
+    "connection": "reopened",
+    "sql": "COMMIT"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.238+00:00",
+    "connection": "reopened",
+    "sql": "SELECT status FROM orders WHERE order_id=120001"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.238+00:00",
+    "connection": "reopened",
+    "sql": "SELECT on_hand,reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.239+00:00",
+    "connection": "fixture",
+    "sql": "UPDATE inventory SET on_hand=10,reserved=0 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.241+00:00",
+    "connection": "savepoint",
+    "sql": "BEGIN IMMEDIATE"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.241+00:00",
+    "connection": "savepoint",
+    "sql": "UPDATE inventory SET reserved=reserved+1 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.241+00:00",
+    "connection": "savepoint",
+    "sql": "SAVEPOINT optional_reservation"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.241+00:00",
+    "connection": "savepoint",
+    "sql": "UPDATE inventory SET reserved=11 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.241+00:00",
+    "connection": "savepoint",
+    "sql": "ROLLBACK TO optional_reservation"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.241+00:00",
+    "connection": "savepoint",
+    "sql": "RELEASE optional_reservation"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.241+00:00",
+    "connection": "savepoint",
+    "sql": "COMMIT"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.242+00:00",
+    "connection": "savepoint",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.242+00:00",
+    "connection": "fixture",
+    "sql": "UPDATE inventory SET on_hand=10,reserved=0 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.243+00:00",
+    "connection": "dirty-A",
+    "sql": "BEGIN IMMEDIATE"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.243+00:00",
+    "connection": "dirty-A",
+    "sql": "UPDATE inventory SET reserved=4 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.243+00:00",
+    "connection": "dirty-A",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.243+00:00",
+    "connection": "dirty-B",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.243+00:00",
+    "connection": "dirty-A",
+    "sql": "ROLLBACK"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.243+00:00",
+    "connection": "dirty-B",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.244+00:00",
+    "connection": "fixture",
+    "sql": "UPDATE inventory SET on_hand=10,reserved=0 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.244+00:00",
+    "connection": "snapshot-A",
+    "sql": "BEGIN"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.244+00:00",
+    "connection": "snapshot-A",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.244+00:00",
+    "connection": "snapshot-B",
+    "sql": "BEGIN IMMEDIATE"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.244+00:00",
+    "connection": "snapshot-B",
+    "sql": "UPDATE inventory SET reserved=2 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.244+00:00",
+    "connection": "snapshot-B",
+    "sql": "COMMIT"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.245+00:00",
+    "connection": "snapshot-A",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.245+00:00",
+    "connection": "snapshot-A",
+    "sql": "UPDATE inventory SET reserved=reserved+1 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.245+00:00",
+    "connection": "snapshot-A",
+    "sql": "ROLLBACK"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.245+00:00",
+    "connection": "snapshot-A",
+    "sql": "BEGIN IMMEDIATE"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.245+00:00",
+    "connection": "snapshot-A",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.245+00:00",
+    "connection": "snapshot-A",
+    "sql": "UPDATE inventory SET reserved=reserved+1 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.245+00:00",
+    "connection": "snapshot-A",
+    "sql": "COMMIT"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.246+00:00",
+    "connection": "snapshot-A",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.884+00:00",
+    "connection": "shared-A",
+    "sql": "BEGIN IMMEDIATE"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.884+00:00",
+    "connection": "shared-A",
+    "sql": "UPDATE inventory SET reserved=4 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.885+00:00",
+    "connection": "shared-B",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.885+00:00",
+    "connection": "shared-B",
+    "sql": "PRAGMA read_uncommitted=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.885+00:00",
+    "connection": "shared-B",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.885+00:00",
+    "connection": "shared-A",
+    "sql": "ROLLBACK"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.885+00:00",
+    "connection": "shared-B",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.885+00:00",
+    "connection": "fixture",
+    "sql": "UPDATE inventory SET on_hand=10,reserved=0 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.887+00:00",
+    "connection": "stale-A",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.887+00:00",
+    "connection": "stale-B",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.887+00:00",
+    "connection": "stale-A",
+    "sql": "UPDATE inventory SET reserved=3 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.888+00:00",
+    "connection": "stale-B",
+    "sql": "UPDATE inventory SET reserved=3 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.889+00:00",
+    "connection": "lost-check",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.889+00:00",
+    "connection": "fixture",
+    "sql": "UPDATE inventory SET on_hand=10,reserved=0 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.891+00:00",
+    "connection": "protected-A",
+    "sql": "BEGIN IMMEDIATE"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.891+00:00",
+    "connection": "protected-A",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.891+00:00",
+    "connection": "protected-B",
+    "sql": "BEGIN IMMEDIATE"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.971+00:00",
+    "connection": "protected-A",
+    "sql": "UPDATE inventory SET reserved=3 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.971+00:00",
+    "connection": "protected-A",
+    "sql": "COMMIT"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.995+00:00",
+    "connection": "protected-B",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.995+00:00",
+    "connection": "protected-B",
+    "sql": "UPDATE inventory SET reserved=6 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.995+00:00",
+    "connection": "protected-B",
+    "sql": "COMMIT"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.996+00:00",
+    "connection": "protected-check",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.996+00:00",
+    "connection": "fixture",
+    "sql": "UPDATE inventory SET on_hand=10,reserved=0 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.998+00:00",
+    "connection": "guard-B",
+    "sql": "UPDATE inventory SET reserved=reserved+7 WHERE warehouse_id=1 AND product_id=1 AND on_hand-reserved>=7"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:43.998+00:00",
+    "connection": "guard-A",
+    "sql": "UPDATE inventory SET reserved=reserved+7 WHERE warehouse_id=1 AND product_id=1 AND on_hand-reserved>=7"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:44.000+00:00",
+    "connection": "guard-check",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:44.000+00:00",
+    "connection": "fixture",
+    "sql": "UPDATE inventory SET on_hand=10,reserved=0 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:44.001+00:00",
+    "connection": "lock-A",
+    "sql": "BEGIN IMMEDIATE"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:44.001+00:00",
+    "connection": "lock-B",
+    "sql": "UPDATE inventory SET reserved=reserved+1 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:44.052+00:00",
+    "connection": "lock-A",
+    "sql": "ROLLBACK"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:44.052+00:00",
+    "connection": "lock-B",
+    "sql": "UPDATE inventory SET reserved=reserved+1 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:44.053+00:00",
+    "connection": "lock-B",
+    "sql": "SELECT reserved FROM inventory WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:44.053+00:00",
+    "connection": "restore",
+    "sql": "UPDATE inventory SET on_hand=250,reserved=6 WHERE warehouse_id=1 AND product_id=1"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:44.054+00:00",
+    "connection": "restore",
+    "sql": "PRAGMA integrity_check"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:44.899+00:00",
+    "connection": "restore",
+    "sql": "SELECT count(*) FROM inventory inv LEFT JOIN\n       (SELECT o.warehouse_id,i.product_id,sum(i.quantity) qty FROM orders o JOIN order_items i USING(order_id)\n        WHERE o.status IN ('RESERVED','PAID') GROUP BY o.warehouse_id,i.product_id) x\n       ON inv.warehouse_id=x.warehouse_id AND inv.product_id=x.product_id\n       WHERE inv.reserved<>coalesce(x.qty,0)"
+  },
+  {
+    "at_utc": "2026-11-22T18:53:44.908+00:00",
+    "connection": "restore",
+    "sql": "PRAGMA wal_checkpoint(TRUNCATE)"
+  }
+]

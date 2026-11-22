@@ -1,0 +1,2 @@
+7 | 0 | 0 | SCAN orders
+12 | 0 | 0 | USE TEMP B-TREE FOR GROUP BY

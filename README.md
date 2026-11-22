@@ -28,3 +28,8 @@ Failed checkout operations must not leave incomplete ordersor incorrect stock qu
 3. Transactions and Concurrency
 4. NoSQL and Advanced Data Models
 5. Distributed and Cloud Database Exercise
+
+<!-- verified-completion -->
+## Latest verified implementation
+
+Portfolios 2-5 have been executed in sequence. See [current results](docs/FINAL_STATUS.md), [rubric evidence](docs/RUBRIC_REVIEW.md), and the [submission summary](submission/MIT8103_Portfolio_Summary.pdf). The earlier Portfolio 1 run evidence is retained in its original folder.

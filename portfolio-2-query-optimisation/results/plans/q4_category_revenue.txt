@@ -1,0 +1,6 @@
+11 | 0 | 0 | SEARCH o USING COVERING INDEX opt_orders_created_status (created_at>? AND created_at<?)
+33 | 0 | 0 | SEARCH i USING INDEX sqlite_autoindex_order_items_2 (order_id=?)
+38 | 0 | 0 | SEARCH p USING INTEGER PRIMARY KEY (rowid=?)
+41 | 0 | 0 | SEARCH c USING INTEGER PRIMARY KEY (rowid=?)
+44 | 0 | 0 | USE TEMP B-TREE FOR GROUP BY
+91 | 0 | 0 | USE TEMP B-TREE FOR ORDER BY

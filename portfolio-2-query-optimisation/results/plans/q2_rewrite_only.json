@@ -1,0 +1,14 @@
+[
+  [
+    7,
+    0,
+    0,
+    "SCAN orders"
+  ],
+  [
+    13,
+    0,
+    0,
+    "USE TEMP B-TREE FOR GROUP BY"
+  ]
+]

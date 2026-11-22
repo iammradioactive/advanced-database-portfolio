@@ -1,0 +1,2 @@
+7 | 0 | 0 | SEARCH orders USING COVERING INDEX opt_orders_created_status (created_at>? AND created_at<?)
+12 | 0 | 0 | USE TEMP B-TREE FOR GROUP BY

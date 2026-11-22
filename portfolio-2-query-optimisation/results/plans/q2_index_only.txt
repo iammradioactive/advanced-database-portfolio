@@ -1,0 +1,2 @@
+7 | 0 | 0 | SCAN orders USING COVERING INDEX opt_orders_created_status
+12 | 0 | 0 | USE TEMP B-TREE FOR GROUP BY

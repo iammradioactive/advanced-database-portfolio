@@ -1,0 +1,937 @@
+[
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Lagoon Select",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "9 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Lagoon Select LED lamp (9 W; 1 unit pack)",
+    "price_kobo": 209000,
+    "product_id": 331,
+    "schema_version": 1,
+    "sku": "LM-04-0331"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Harbour",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "9 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Harbour LED lamp (9 W; 1 unit pack)",
+    "price_kobo": 214500,
+    "product_id": 333,
+    "schema_version": 1,
+    "sku": "LM-04-0333"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Palmstone",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "9 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Palmstone LED lamp (9 W; 1 unit pack)",
+    "price_kobo": 220000,
+    "product_id": 335,
+    "schema_version": 1,
+    "sku": "LM-04-0335"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Westgate",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "9 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Westgate LED lamp (9 W; 1 unit pack)",
+    "price_kobo": 225499,
+    "product_id": 337,
+    "schema_version": 1,
+    "sku": "LM-04-0337"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Creek",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "9 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Creek LED lamp (9 W; 1 unit pack)",
+    "price_kobo": 231000,
+    "product_id": 339,
+    "schema_version": 1,
+    "sku": "LM-04-0339"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Lagoon Select",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "1 m",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Lagoon Select USB-C cable (1 m; 1 unit pack)",
+    "price_kobo": 304000,
+    "product_id": 321,
+    "schema_version": 1,
+    "sku": "LM-04-0321"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Harbour",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "1 m",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Harbour USB-C cable (1 m; 1 unit pack)",
+    "price_kobo": 312000,
+    "product_id": 323,
+    "schema_version": 1,
+    "sku": "LM-04-0323"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Palmstone",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "1 m",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Palmstone USB-C cable (1 m; 1 unit pack)",
+    "price_kobo": 320000,
+    "product_id": 325,
+    "schema_version": 1,
+    "sku": "LM-04-0325"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Westgate",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "1 m",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Westgate USB-C cable (1 m; 1 unit pack)",
+    "price_kobo": 328000,
+    "product_id": 327,
+    "schema_version": 1,
+    "sku": "LM-04-0327"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Creek",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "1 m",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Creek USB-C cable (1 m; 1 unit pack)",
+    "price_kobo": 336000,
+    "product_id": 329,
+    "schema_version": 1,
+    "sku": "LM-04-0329"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Lagoon Select",
+      "pack_units": 2,
+      "power_source": "model dependent",
+      "unit_size": "9 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Lagoon Select LED lamp (9 W; 2 unit pack)",
+    "price_kobo": 418000,
+    "product_id": 332,
+    "schema_version": 1,
+    "sku": "LM-04-0332"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Harbour",
+      "pack_units": 2,
+      "power_source": "model dependent",
+      "unit_size": "9 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Harbour LED lamp (9 W; 2 unit pack)",
+    "price_kobo": 429000,
+    "product_id": 334,
+    "schema_version": 1,
+    "sku": "LM-04-0334"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Palmstone",
+      "pack_units": 2,
+      "power_source": "model dependent",
+      "unit_size": "9 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Palmstone LED lamp (9 W; 2 unit pack)",
+    "price_kobo": 440000,
+    "product_id": 336,
+    "schema_version": 1,
+    "sku": "LM-04-0336"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Westgate",
+      "pack_units": 2,
+      "power_source": "model dependent",
+      "unit_size": "9 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Westgate LED lamp (9 W; 2 unit pack)",
+    "price_kobo": 450999,
+    "product_id": 338,
+    "schema_version": 1,
+    "sku": "LM-04-0338"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Creek",
+      "pack_units": 2,
+      "power_source": "model dependent",
+      "unit_size": "9 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Creek LED lamp (9 W; 2 unit pack)",
+    "price_kobo": 462000,
+    "product_id": 340,
+    "schema_version": 1,
+    "sku": "LM-04-0340"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Lagoon Select",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "3.5 mm",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Lagoon Select Earphones (3.5 mm; 1 unit pack)",
+    "price_kobo": 522500,
+    "product_id": 371,
+    "schema_version": 1,
+    "sku": "LM-04-0371"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Harbour",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "3.5 mm",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Harbour Earphones (3.5 mm; 1 unit pack)",
+    "price_kobo": 536250,
+    "product_id": 373,
+    "schema_version": 1,
+    "sku": "LM-04-0373"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Palmstone",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "3.5 mm",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Palmstone Earphones (3.5 mm; 1 unit pack)",
+    "price_kobo": 550000,
+    "product_id": 375,
+    "schema_version": 1,
+    "sku": "LM-04-0375"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Westgate",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "3.5 mm",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Westgate Earphones (3.5 mm; 1 unit pack)",
+    "price_kobo": 563750,
+    "product_id": 377,
+    "schema_version": 1,
+    "sku": "LM-04-0377"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Creek",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "3.5 mm",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Creek Earphones (3.5 mm; 1 unit pack)",
+    "price_kobo": 577500,
+    "product_id": 379,
+    "schema_version": 1,
+    "sku": "LM-04-0379"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Lagoon Select",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "32 GB",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Lagoon Select Flash drive (32 GB; 1 unit pack)",
+    "price_kobo": 589000,
+    "product_id": 381,
+    "schema_version": 1,
+    "sku": "LM-04-0381"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Harbour",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "32 GB",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Harbour Flash drive (32 GB; 1 unit pack)",
+    "price_kobo": 604500,
+    "product_id": 383,
+    "schema_version": 1,
+    "sku": "LM-04-0383"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Lagoon Select",
+      "pack_units": 2,
+      "power_source": "model dependent",
+      "unit_size": "1 m",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Lagoon Select USB-C cable (1 m; 2 unit pack)",
+    "price_kobo": 608000,
+    "product_id": 322,
+    "schema_version": 1,
+    "sku": "LM-04-0322"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Palmstone",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "32 GB",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Palmstone Flash drive (32 GB; 1 unit pack)",
+    "price_kobo": 620000,
+    "product_id": 385,
+    "schema_version": 1,
+    "sku": "LM-04-0385"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Harbour",
+      "pack_units": 2,
+      "power_source": "model dependent",
+      "unit_size": "1 m",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Harbour USB-C cable (1 m; 2 unit pack)",
+    "price_kobo": 624000,
+    "product_id": 324,
+    "schema_version": 1,
+    "sku": "LM-04-0324"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Westgate",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "32 GB",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Westgate Flash drive (32 GB; 1 unit pack)",
+    "price_kobo": 635500,
+    "product_id": 387,
+    "schema_version": 1,
+    "sku": "LM-04-0387"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Palmstone",
+      "pack_units": 2,
+      "power_source": "model dependent",
+      "unit_size": "1 m",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Palmstone USB-C cable (1 m; 2 unit pack)",
+    "price_kobo": 640000,
+    "product_id": 326,
+    "schema_version": 1,
+    "sku": "LM-04-0326"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Lagoon Select",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "2.4 GHz",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Lagoon Select Wireless mouse (2.4 GHz; 1 unit pack)",
+    "price_kobo": 646000,
+    "product_id": 351,
+    "schema_version": 1,
+    "sku": "LM-04-0351"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Creek",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "32 GB",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Creek Flash drive (32 GB; 1 unit pack)",
+    "price_kobo": 651000,
+    "product_id": 389,
+    "schema_version": 1,
+    "sku": "LM-04-0389"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Westgate",
+      "pack_units": 2,
+      "power_source": "model dependent",
+      "unit_size": "1 m",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Westgate USB-C cable (1 m; 2 unit pack)",
+    "price_kobo": 656000,
+    "product_id": 328,
+    "schema_version": 1,
+    "sku": "LM-04-0328"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Harbour",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "2.4 GHz",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Harbour Wireless mouse (2.4 GHz; 1 unit pack)",
+    "price_kobo": 663000,
+    "product_id": 353,
+    "schema_version": 1,
+    "sku": "LM-04-0353"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Creek",
+      "pack_units": 2,
+      "power_source": "model dependent",
+      "unit_size": "1 m",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Creek USB-C cable (1 m; 2 unit pack)",
+    "price_kobo": 672000,
+    "product_id": 330,
+    "schema_version": 1,
+    "sku": "LM-04-0330"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Palmstone",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "2.4 GHz",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Palmstone Wireless mouse (2.4 GHz; 1 unit pack)",
+    "price_kobo": 680000,
+    "product_id": 355,
+    "schema_version": 1,
+    "sku": "LM-04-0355"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Westgate",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "2.4 GHz",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Westgate Wireless mouse (2.4 GHz; 1 unit pack)",
+    "price_kobo": 696999,
+    "product_id": 357,
+    "schema_version": 1,
+    "sku": "LM-04-0357"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Lagoon Select",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "4 outlet",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Lagoon Select Extension socket (4 outlet; 1 unit pack)",
+    "price_kobo": 712500,
+    "product_id": 341,
+    "schema_version": 1,
+    "sku": "LM-04-0341"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Creek",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "2.4 GHz",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Creek Wireless mouse (2.4 GHz; 1 unit pack)",
+    "price_kobo": 714000,
+    "product_id": 359,
+    "schema_version": 1,
+    "sku": "LM-04-0359"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Harbour",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "4 outlet",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Harbour Extension socket (4 outlet; 1 unit pack)",
+    "price_kobo": 731250,
+    "product_id": 343,
+    "schema_version": 1,
+    "sku": "LM-04-0343"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Palmstone",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "4 outlet",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Palmstone Extension socket (4 outlet; 1 unit pack)",
+    "price_kobo": 750000,
+    "product_id": 345,
+    "schema_version": 1,
+    "sku": "LM-04-0345"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Lagoon Select",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "1200 mAh",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Lagoon Select Rechargeable torch (1200 mAh; 1 unit pack)",
+    "price_kobo": 760000,
+    "product_id": 391,
+    "schema_version": 1,
+    "sku": "LM-04-0391"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Westgate",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "4 outlet",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Westgate Extension socket (4 outlet; 1 unit pack)",
+    "price_kobo": 768749,
+    "product_id": 347,
+    "schema_version": 1,
+    "sku": "LM-04-0347"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Harbour",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "1200 mAh",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Harbour Rechargeable torch (1200 mAh; 1 unit pack)",
+    "price_kobo": 780000,
+    "product_id": 393,
+    "schema_version": 1,
+    "sku": "LM-04-0393"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Creek",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "4 outlet",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Creek Extension socket (4 outlet; 1 unit pack)",
+    "price_kobo": 787500,
+    "product_id": 349,
+    "schema_version": 1,
+    "sku": "LM-04-0349"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Palmstone",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "1200 mAh",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Palmstone Rechargeable torch (1200 mAh; 1 unit pack)",
+    "price_kobo": 800000,
+    "product_id": 395,
+    "schema_version": 1,
+    "sku": "LM-04-0395"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Lagoon Select",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "20 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Lagoon Select USB-C charger (20 W; 1 unit pack)",
+    "price_kobo": 807500,
+    "product_id": 301,
+    "schema_version": 1,
+    "sku": "LM-04-0301"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Westgate",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "1200 mAh",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Westgate Rechargeable torch (1200 mAh; 1 unit pack)",
+    "price_kobo": 819999,
+    "product_id": 397,
+    "schema_version": 1,
+    "sku": "LM-04-0397"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Harbour",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "20 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Harbour USB-C charger (20 W; 1 unit pack)",
+    "price_kobo": 828750,
+    "product_id": 303,
+    "schema_version": 1,
+    "sku": "LM-04-0303"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Creek",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "1200 mAh",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Creek Rechargeable torch (1200 mAh; 1 unit pack)",
+    "price_kobo": 840000,
+    "product_id": 399,
+    "schema_version": 1,
+    "sku": "LM-04-0399"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Palmstone",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "20 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Palmstone USB-C charger (20 W; 1 unit pack)",
+    "price_kobo": 850000,
+    "product_id": 305,
+    "schema_version": 1,
+    "sku": "LM-04-0305"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Lagoon Select",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "USB",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Lagoon Select Wired keyboard (USB; 1 unit pack)",
+    "price_kobo": 855000,
+    "product_id": 361,
+    "schema_version": 1,
+    "sku": "LM-04-0361"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Westgate",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "20 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Westgate USB-C charger (20 W; 1 unit pack)",
+    "price_kobo": 871249,
+    "product_id": 307,
+    "schema_version": 1,
+    "sku": "LM-04-0307"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Harbour",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "USB",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Harbour Wired keyboard (USB; 1 unit pack)",
+    "price_kobo": 877500,
+    "product_id": 363,
+    "schema_version": 1,
+    "sku": "LM-04-0363"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Creek",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "20 W",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Creek USB-C charger (20 W; 1 unit pack)",
+    "price_kobo": 892500,
+    "product_id": 309,
+    "schema_version": 1,
+    "sku": "LM-04-0309"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Palmstone",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "USB",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Palmstone Wired keyboard (USB; 1 unit pack)",
+    "price_kobo": 900000,
+    "product_id": 365,
+    "schema_version": 1,
+    "sku": "LM-04-0365"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Westgate",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "USB",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Westgate Wired keyboard (USB; 1 unit pack)",
+    "price_kobo": 922499,
+    "product_id": 367,
+    "schema_version": 1,
+    "sku": "LM-04-0367"
+  },
+  {
+    "active": true,
+    "attributes": {
+      "brand": "Creek",
+      "pack_units": 1,
+      "power_source": "model dependent",
+      "unit_size": "USB",
+      "warranty_months": 12
+    },
+    "category": "Electronics",
+    "category_id": 4,
+    "name": "Creek Wired keyboard (USB; 1 unit pack)",
+    "price_kobo": 945000,
+    "product_id": 369,
+    "schema_version": 1,
+    "sku": "LM-04-0369"
+  }
+]
