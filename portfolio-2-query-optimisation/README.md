@@ -1,4 +1,4 @@
-# Portfolio 2 - Query Processing and Optimisation (7 marks)
+# Portfolio 2 - Query Processing and Optimisation
 
 ```bash
 python portfolio-2-query-optimisation/benchmark.py
@@ -52,4 +52,4 @@ parameters; wider selectivity, cold I/O, contention and repeated end-to-end work
 trials remain useful production evaluations. Re-running overwrites the evidence with
 new actual measurements rather than preserving these values artificially.
 
-References: SQLite (n.d.-b, n.d.-d); full APA entries are in `docs/REFERENCES.md`.
+
