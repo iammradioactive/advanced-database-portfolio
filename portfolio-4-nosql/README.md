@@ -7,7 +7,7 @@ consistent with the relational implementation wherever they are shared.
 ## Required evidence
 The assessment requires a NoSQL model based on the same case study,
 a document/key-value/column/graph example, implementation evidence and
-an explanation of suitability (MIVA Open University, 2026, p. 3).
+an explanation of suitability.
 
 ## Where to put the work
 Keep this activity's files inside this folder. Suggested organisation:
