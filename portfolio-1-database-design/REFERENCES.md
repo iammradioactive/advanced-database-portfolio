@@ -22,6 +22,4 @@ SQLite. (n.d.). *Partial indexes*. https://www.sqlite.org/partialindex.html
 
 The organisation, product brands and customer records are simulated. The data generator
 was written with AI assistance and uses Python's standard library with seed 8103.
-No external customer dataset was used. This package builds on the AI-assisted Lagoon
-Market implementation prepared earlier in this conversation; it is not a separate
-student-authored project or evidence of semester-long independent development.
+No external customer dataset was used. 
