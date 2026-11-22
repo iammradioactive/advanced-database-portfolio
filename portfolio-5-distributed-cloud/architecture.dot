@@ -1,0 +1,24 @@
+digraph Lagoon {
+ graph [rankdir=TB, bgcolor="white", pad="0.3", nodesep="0.55", ranksep="0.55", fontname="DejaVu Sans"];
+ node [shape=box, style="rounded", fontname="DejaVu Sans", fontsize=11, margin="0.15,0.12"];
+ edge [fontname="DejaVu Sans", fontsize=9];
+ source [label="Lagoon Market relational authority\n120 DISPATCHED orders + shipment identities\nExplicit snapshot, not a continuous CDC bridge"];
+ router [label="HTTP client / shard router\norder_id % 2\nPer-shard session watermark + expected version"];
+ source -> router [label="source-linked delivery events"];
+ subgraph cluster0 {label="Shard 0 / 65 deliveries";fontname="DejaVu Sans";fontsize=12;
+ p0 [label="s0-primary / port 8810\nSQLite file A\nInitial primary / epoch 1"];
+ r0 [label="s0-replica / port 8811\nSQLite file B\nInitial replica / epoch 1"];
+ p0 -> r0 [label="async ordered event log\nindependent worker"];
+ }
+ subgraph cluster1 {label="Shard 1 / 55 deliveries";fontname="DejaVu Sans";fontsize=12;
+ p1 [label="s1-primary / port 8820\nSQLite file C\nPrimary / epoch 1"];
+ r1 [label="s1-replica / port 8821\nSQLite file D\nReplica / epoch 1"];
+ p1 -> r1 [label="async ordered event log\nindependent worker"];
+ }
+ router -> p0 [label="even order IDs"];
+ router -> p1 [label="odd order IDs"];
+ recovery [label="Executed shard-0 recovery\nStop old primary -> read replica -> manual promotion\n8811 becomes primary / epoch 2; 8810 rejoins as replica\nNew delivery event replicated back to 8810"];
+ r0 -> recovery [style=dashed,label="fault and recovery tests"];
+ boundary [label="TEST BOUNDARY: four processes on one host\nNot cloud / no automatic election / no real network partition",shape=note];
+ recovery -> boundary [style=invis];r1 -> boundary [style=invis];
+}

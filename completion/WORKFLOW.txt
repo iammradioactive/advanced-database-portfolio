@@ -1,0 +1,55 @@
+name: Complete remaining portfolios
+
+on:
+  workflow_dispatch:
+    inputs:
+      student_name:
+        description: Full name for the summary (optional)
+        required: false
+        default: ''
+      student_id:
+        description: Matriculation number (optional)
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mit8103-completion-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  complete:
+    name: Run portfolios 2-5 and save evidence
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Read repository
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Install database and document tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends python3-docx libreoffice-writer fonts-liberation poppler-utils
+          /usr/bin/python3 -c "import dbm.ndbm, docx; print('DBM backend:', dbm.ndbm.library)"
+
+      - name: Execute portfolios and generate summary
+        env:
+          STUDENT_NAME: ${{ inputs.student_name }}
+          STUDENT_ID: ${{ inputs.student_id }}
+        run: /usr/bin/python3 finish_assessment.py --rebuild
+
+      - name: Save results back to this repository
+        run: /usr/bin/python3 completion/publish_results.py
+
+      - name: Downloadable submission and evidence
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: MIT8103-final-submission
+          path: assessment-artifacts/
+          if-no-files-found: warn
+          retention-days: 14

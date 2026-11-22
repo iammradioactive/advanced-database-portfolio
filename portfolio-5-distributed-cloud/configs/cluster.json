@@ -1,0 +1,35 @@
+{
+  "partition_rule": "order_id % 2",
+  "transport": "HTTP over loopback in tested deployment",
+  "application_replication": true,
+  "nodes": [
+    {
+      "node_id": "s0-primary",
+      "shard": 0,
+      "role": "primary",
+      "port": 8810,
+      "db": ".runtime/cluster/s0-primary.sqlite"
+    },
+    {
+      "node_id": "s0-replica",
+      "shard": 0,
+      "role": "replica",
+      "port": 8811,
+      "db": ".runtime/cluster/s0-replica.sqlite"
+    },
+    {
+      "node_id": "s1-primary",
+      "shard": 1,
+      "role": "primary",
+      "port": 8820,
+      "db": ".runtime/cluster/s1-primary.sqlite"
+    },
+    {
+      "node_id": "s1-replica",
+      "shard": 1,
+      "role": "replica",
+      "port": 8821,
+      "db": ".runtime/cluster/s1-replica.sqlite"
+    }
+  ]
+}

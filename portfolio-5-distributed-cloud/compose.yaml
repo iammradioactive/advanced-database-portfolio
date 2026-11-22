@@ -1,0 +1,159 @@
+name: lagoon-market-lab
+services:
+  s0-primary:
+    build: .
+    command:
+    - python
+    - node.py
+    - --db
+    - /state/node.sqlite
+    - --node-id
+    - s0-primary
+    - --shard
+    - '0'
+    - --role
+    - primary
+    - --host
+    - 0.0.0.0
+    - --port
+    - '8080'
+    ports:
+    - 127.0.0.1:8810:8080
+    volumes:
+    - s0-primary-data:/state
+    healthcheck:
+      test:
+      - CMD
+      - python
+      - -c
+      - import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/status',timeout=2).read()
+      interval: 3s
+      timeout: 2s
+      retries: 15
+  s0-replica:
+    build: .
+    command:
+    - python
+    - node.py
+    - --db
+    - /state/node.sqlite
+    - --node-id
+    - s0-replica
+    - --shard
+    - '0'
+    - --role
+    - replica
+    - --host
+    - 0.0.0.0
+    - --port
+    - '8080'
+    ports:
+    - 127.0.0.1:8811:8080
+    volumes:
+    - s0-replica-data:/state
+    healthcheck:
+      test:
+      - CMD
+      - python
+      - -c
+      - import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/status',timeout=2).read()
+      interval: 3s
+      timeout: 2s
+      retries: 15
+  replicator-0:
+    build: .
+    command:
+    - python
+    - replicator.py
+    - --source
+    - http://s0-primary:8080
+    - --target
+    - http://s0-replica:8080
+    - --interval
+    - '0.1'
+    depends_on:
+      s0-primary:
+        condition: service_healthy
+      s0-replica:
+        condition: service_healthy
+  s1-primary:
+    build: .
+    command:
+    - python
+    - node.py
+    - --db
+    - /state/node.sqlite
+    - --node-id
+    - s1-primary
+    - --shard
+    - '1'
+    - --role
+    - primary
+    - --host
+    - 0.0.0.0
+    - --port
+    - '8080'
+    ports:
+    - 127.0.0.1:8820:8080
+    volumes:
+    - s1-primary-data:/state
+    healthcheck:
+      test:
+      - CMD
+      - python
+      - -c
+      - import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/status',timeout=2).read()
+      interval: 3s
+      timeout: 2s
+      retries: 15
+  s1-replica:
+    build: .
+    command:
+    - python
+    - node.py
+    - --db
+    - /state/node.sqlite
+    - --node-id
+    - s1-replica
+    - --shard
+    - '1'
+    - --role
+    - replica
+    - --host
+    - 0.0.0.0
+    - --port
+    - '8080'
+    ports:
+    - 127.0.0.1:8821:8080
+    volumes:
+    - s1-replica-data:/state
+    healthcheck:
+      test:
+      - CMD
+      - python
+      - -c
+      - import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/status',timeout=2).read()
+      interval: 3s
+      timeout: 2s
+      retries: 15
+  replicator-1:
+    build: .
+    command:
+    - python
+    - replicator.py
+    - --source
+    - http://s1-primary:8080
+    - --target
+    - http://s1-replica:8080
+    - --interval
+    - '0.1'
+    depends_on:
+      s1-primary:
+        condition: service_healthy
+      s1-replica:
+        condition: service_healthy
+volumes:
+  s0-primary-data: {}
+  s0-replica-data: {}
+  s1-primary-data: {}
+  s1-replica-data: {}

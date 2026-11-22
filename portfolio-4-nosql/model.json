@@ -1,0 +1,37 @@
+{
+  "engine": "Persistent dbm.ndbm key-value database; actual native backend recorded in results/nosql_tests.json",
+  "encoding": "UTF-8 JSON values; UTF-8 string keys",
+  "structures": {
+    "product:<sku>": {
+      "purpose": "complete catalogue document",
+      "example_fields": [
+        "product_id",
+        "sku",
+        "name",
+        "category_id",
+        "price_kobo",
+        "attributes",
+        "schema_version"
+      ]
+    },
+    "category:<category_id>": {
+      "purpose": "rebuildable secondary index",
+      "value": "sorted array of SKU strings"
+    },
+    "delivery:<order_id>": {
+      "purpose": "order-centric tracking history",
+      "value": "tracking reference plus bounded event array (maximum 50)"
+    },
+    "cart:<customer_id>": {
+      "purpose": "temporary shopping cart",
+      "value": "items plus expires_at_unix; application-managed lazy expiry"
+    },
+    "draft:<name>": {
+      "purpose": "unpublished merchandising draft",
+      "value": "flexible JSON document"
+    }
+  },
+  "authority": "SQLite owns stock, payments and published base product fields; this store is a rebuildable read projection.",
+  "consistency": "cooperating processes use advisory locks; no native multi-key transaction or crash-atomic index claim",
+  "recovery": "reload canonical catalogue; rebuild secondary indexes; JSON export is portable across DBM backends"
+}
