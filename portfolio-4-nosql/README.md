@@ -45,22 +45,5 @@ loaded into a second physical store and the document hashes are compared.
 600-document export and a delivery example are included. The final catalogue is
 restored to the original generated contents and all category indexes are checked.
 
-## Suitability and limits
 
-Direct SKU access and product-specific attributes suit a key-value read projection.
-Orders, stock reservations and payments remain relational because they need joined
-constraints and atomic multi-row updates. A cache miss can be rebuilt from the SQL
-source and the attribute seed. DBM offers neither a foreign-key constraint nor automatic
-TTL, distributed replication or native multi-key transactions through this interface.
 
-A POSIX advisory file lock serializes cooperating writers and prevents cooperating
-readers seeing a live multi-key update. A process crash can nevertheless leave document
-and index keys inconsistent; the demonstrated rebuild is the recovery mechanism.
-Full reindexing on each product mutation is acceptable for this 600-product teaching
-store but O(n) and unsuitable for a high-write, very large catalogue. A transactional
-key-value/document service would be a production alternative. No such external service
-was deployed or benchmarked here. DBM binary files are backend-dependent; the JSON
-export and reload script are the portable submission artefacts. Use Linux/WSL with
-`dbm.ndbm` available rather than silently replacing the engine on another platform.
-
-Reference: Python Software Foundation (n.d.); see `docs/REFERENCES.md`.
